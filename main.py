@@ -1,16 +1,11 @@
-"""A code review comment that approves the pull request while
-quietly admitting the reviewer has run out of fear to feel."""
+"""Approve a clean diff, then sit with it.
+
+The dread is not in the code. It is in the reviewer, after the merge,
+still watching the green checks, waiting for them to change their mind.
+"""
 
 from pathlib import Path
 
-APPROVAL_LINE = "LGTM. Nothing in this diff scares me anymore, which is exactly what scares me."
+LINE = "LGTM. Merged it, then sat there a minute staring at the green checks like they'd change their mind."
 
-DESTINATION = Path("/output/entry.txt")
-
-
-def main() -> None:
-    DESTINATION.write_text(APPROVAL_LINE, encoding="utf-8")
-
-
-if __name__ == "__main__":
-    main()
+Path("/output/entry.txt").write_text(LINE, encoding="utf-8")
